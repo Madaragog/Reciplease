@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  IngredientsViewController.swift
 //  Reciplease
 //
 //  Created by Cedric on 28/05/2020.
@@ -8,10 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class IngredientsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 }
