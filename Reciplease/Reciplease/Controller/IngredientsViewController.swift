@@ -15,6 +15,8 @@ class IngredientsViewController: UIViewController {
     @IBOutlet weak var searchForRecipes: UIButton!
     @IBOutlet weak var ingredientsList: UITableView!
 
+    let requestService = RequestService()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         ingredientTextField.setUnderLine()
@@ -49,6 +51,10 @@ class IngredientsViewController: UIViewController {
     @IBAction func tappedClearButton() {
         IngredientsService.shared.removeAll()
         ingredientsList.reloadData()
+    }
+
+    @IBAction func tappedSearchForRecipesButton(_ sender: UIButton) {
+        requestService.request()
     }
 
     // Removes the keyboard if displayed
