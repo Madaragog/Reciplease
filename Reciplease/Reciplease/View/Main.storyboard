@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dKa-VB-VKI">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="beau.ttf">
+            <string>Beau-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Custom Tab Bar Controller-->
         <scene sceneID="KSU-bs-n3F">
@@ -15,6 +20,7 @@
                     <tabBar key="tabBar" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ogg-eb-spJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.21165716649999999" green="0.20007786150000001" blue="0.19607779380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="selectedImageTintColor" red="0.77100354429999995" green="0.65354096890000002" blue="0.49801063540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -38,6 +44,17 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lsk-qV-2xD">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.21165716649999999" green="0.20007786150000001" blue="0.19607779380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Beau-Regular" family="Beau" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="hVO-PK-LR2" kind="relationship" relationship="rootViewController" id="B2D-qT-fr7"/>
@@ -47,21 +64,206 @@
             </objects>
             <point key="canvasLocation" x="-1532" y="-564"/>
         </scene>
-        <!--Ingredients View Controller-->
+        <!--Reciplease-->
         <scene sceneID="V7R-uq-6fO">
             <objects>
                 <viewController id="hVO-PK-LR2" customClass="IngredientsViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N82-Tv-VUG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="jbz-TA-2B0" userLabel="IngredientsBoard">
+                                <rect key="frame" x="8" y="206" width="398" height="599"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BW4-0X-ANE">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="26"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your ingredients :           " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJ2-wP-2Hh">
+                                                <rect key="frame" x="0.0" y="0.0" width="318" height="26"/>
+                                                <color key="backgroundColor" red="0.21165716649999999" green="0.20007786150000001" blue="0.19607779380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kve-eO-beC">
+                                                <rect key="frame" x="328" y="0.0" width="70" height="26"/>
+                                                <color key="backgroundColor" red="0.34930658339999998" green="0.57533043620000002" blue="0.38428479430000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="nIn-CZ-qux"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Beau-Regular" family="Beau" pointSize="20"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Clear">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tappedClearButton" destination="hVO-PK-LR2" eventType="touchUpInside" id="9cT-m8-ft4"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.21165716649999999" green="0.20007786150000001" blue="0.19607779380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </stackView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mES-Zk-kUw" userLabel="IngredientsList">
+                                        <rect key="frame" x="0.0" y="29" width="398" height="517"/>
+                                        <color key="backgroundColor" red="0.21165716649999999" green="0.20007786150000001" blue="0.19607779380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="0.21165716649999999" green="0.20007786150000001" blue="0.19607779380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="separatorColor" red="0.21165716649999999" green="0.20007786150000001" blue="0.19607779380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="sectionIndexColor" red="0.21165716649999999" green="0.20007786150000001" blue="0.19607779380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="sectionIndexBackgroundColor" red="0.21165716649999999" green="0.20007786150000001" blue="0.19607779380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="sectionIndexTrackingBackgroundColor" red="0.21165716649999999" green="0.20007786150000001" blue="0.19607779380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="IngredientCell" textLabel="xkZ-Lo-rJP" style="IBUITableViewCellStyleDefault" id="jyE-3U-Wrf">
+                                                <rect key="frame" x="0.0" y="28" width="398" height="49.666667938232422"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jyE-3U-Wrf" id="ECJ-Eg-hJH" userLabel="ContentView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="398" height="49.666667938232422"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" id="xkZ-Lo-rJP">
+                                                            <rect key="frame" x="20" y="0.0" width="358" height="49.666667938232422"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <color key="backgroundColor" red="0.21165716649999999" green="0.20007786150000001" blue="0.19607779380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="highlightedColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                            <color key="shadowColor" red="0.21165716649999999" green="0.20007786150000001" blue="0.19607779380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.21165716649999999" green="0.20007786150000001" blue="0.19607779380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="tintColor" red="0.21165716649999999" green="0.20007786150000001" blue="0.19607779380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" red="0.21165716649999999" green="0.20007786150000001" blue="0.19607779380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" red="0.21165716649999999" green="0.20007786150000001" blue="0.19607779380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="hVO-PK-LR2" id="bBo-Hf-6MR"/>
+                                        </connections>
+                                    </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbC-F6-ZCy">
+                                        <rect key="frame" x="0.0" y="549" width="398" height="50"/>
+                                        <color key="backgroundColor" red="0.34930658339999998" green="0.57533043620000002" blue="0.38428479430000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="4ER-sn-Qcy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Beau-Regular" family="Beau" pointSize="22"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="   Search for recipes   ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.21165716649999999" green="0.20007786150000001" blue="0.19607779380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="QbC-F6-ZCy" firstAttribute="leading" secondItem="jbz-TA-2B0" secondAttribute="leading" id="IDc-B7-eXx"/>
+                                    <constraint firstAttribute="trailing" secondItem="BW4-0X-ANE" secondAttribute="trailing" id="MLd-Rd-UcI"/>
+                                    <constraint firstItem="mES-Zk-kUw" firstAttribute="trailing" secondItem="BW4-0X-ANE" secondAttribute="trailing" id="Ogf-JL-EmT"/>
+                                    <constraint firstAttribute="trailing" secondItem="QbC-F6-ZCy" secondAttribute="trailing" id="bhH-Z7-DK7"/>
+                                    <constraint firstItem="BW4-0X-ANE" firstAttribute="leading" secondItem="jbz-TA-2B0" secondAttribute="leading" id="pcm-pS-SwW"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhI-Gx-ooT" userLabel="AddingIngredient">
+                                <rect key="frame" x="0.0" y="88" width="414" height="110"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="7mw-xa-D2T">
+                                        <rect key="frame" x="8" y="8" width="398" height="94"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's in your fridge ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="od5-rG-uQU">
+                                                <rect key="frame" x="58" y="0.0" width="282.33333333333331" height="35"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Beau-Regular" family="Beau" pointSize="28"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7dh-Yb-MjU">
+                                                <rect key="frame" x="0.0" y="59" width="398" height="35"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jtF-BL-kVj">
+                                                        <rect key="frame" x="0.0" y="0.0" width="310" height="35"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" red="0.77100354429999995" green="0.65354096890000002" blue="0.49801063540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="Beau-Regular" family="Beau" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSN-2z-FKT">
+                                                        <rect key="frame" x="320" y="0.0" width="78" height="35"/>
+                                                        <color key="backgroundColor" red="0.34930658339999998" green="0.57533043620000002" blue="0.38428479430000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Beau-Regular" family="Beau" pointSize="22"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="   Add   ">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="tappedAddButton" destination="hVO-PK-LR2" eventType="touchUpInside" id="kQt-tu-Wc7"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="1uv-hc-KLJ"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="7dh-Yb-MjU" secondAttribute="trailing" id="7qF-Of-iLs"/>
+                                            <constraint firstItem="7dh-Yb-MjU" firstAttribute="leading" secondItem="7mw-xa-D2T" secondAttribute="leading" id="JHI-Wq-j6P"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="7mw-xa-D2T" firstAttribute="leading" secondItem="jhI-Gx-ooT" secondAttribute="leading" constant="8" id="Fi7-qL-4wZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="7mw-xa-D2T" secondAttribute="trailing" constant="8" id="ZXq-SQ-k0K"/>
+                                    <constraint firstAttribute="bottom" secondItem="7mw-xa-D2T" secondAttribute="bottom" constant="8" id="iTt-vk-g27"/>
+                                    <constraint firstItem="7mw-xa-D2T" firstAttribute="top" secondItem="jhI-Gx-ooT" secondAttribute="top" constant="8" id="kiZ-nu-XSx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.21165716649999999" green="0.20007786150000001" blue="0.19607779380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.21165716649999999" green="0.20007786150000001" blue="0.19607779380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="dlR-5Q-qeN" firstAttribute="bottom" secondItem="jbz-TA-2B0" secondAttribute="bottom" constant="8" id="1lL-6p-EhS"/>
+                            <constraint firstItem="dlR-5Q-qeN" firstAttribute="trailing" secondItem="jbz-TA-2B0" secondAttribute="trailing" constant="8" id="GSE-fw-aYh"/>
+                            <constraint firstItem="jhI-Gx-ooT" firstAttribute="trailing" secondItem="dlR-5Q-qeN" secondAttribute="trailing" id="Rng-PC-h6u"/>
+                            <constraint firstItem="jbz-TA-2B0" firstAttribute="centerX" secondItem="N82-Tv-VUG" secondAttribute="centerX" id="XwS-x7-EBN"/>
+                            <constraint firstItem="jhI-Gx-ooT" firstAttribute="leading" secondItem="dlR-5Q-qeN" secondAttribute="leading" id="piP-2k-TkT"/>
+                            <constraint firstItem="jhI-Gx-ooT" firstAttribute="top" secondItem="dlR-5Q-qeN" secondAttribute="top" id="zab-TK-IFu"/>
+                            <constraint firstItem="jbz-TA-2B0" firstAttribute="top" secondItem="jhI-Gx-ooT" secondAttribute="bottom" constant="8" id="zpZ-Ne-BFi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dlR-5Q-qeN"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="BmP-QE-cD7" appends="YES" id="ju0-gU-s20"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="jcS-LQ-8mX"/>
+                    <navigationItem key="navigationItem" title="Reciplease" id="jcS-LQ-8mX"/>
+                    <connections>
+                        <outlet property="addIngredientsButton" destination="dSN-2z-FKT" id="F8y-jA-57l"/>
+                        <outlet property="clearIngredientsButton" destination="kve-eO-beC" id="Td8-WA-d84"/>
+                        <outlet property="ingredientTextField" destination="jtF-BL-kVj" id="eIK-VK-7vg"/>
+                        <outlet property="ingredientsList" destination="mES-Zk-kUw" id="wi8-xD-hwo"/>
+                        <outlet property="searchForRecipes" destination="QbC-F6-ZCy" id="ASd-PF-NbQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0x9-oe-KIH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="BmP-QE-cD7">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="hVO-PK-LR2" id="yZU-ue-mDl"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-613" y="-565"/>
+            <point key="canvasLocation" x="-615.94202898550725" y="-567.85714285714278"/>
         </scene>
     </scenes>
     <resources>

@@ -18,8 +18,7 @@ class CustomTabBarController: UITabBarController {
     // sets the font of the tab Bar
     private func setTabBarFont() {
         let fontAttributes = [NSAttributedString.Key.font: UIFont(name: "beau", size: 18.0),
-                              NSAttributedString.Key.foregroundColor:
-                                UIColor(red: 200, green: 200, blue: 200, alpha: 1)]
+                              NSAttributedString.Key.foregroundColor: UIColor.white]
         UITabBarItem.appearance().setTitleTextAttributes(fontAttributes as [NSAttributedString.Key: Any], for: .normal)
     }
 }

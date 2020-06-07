@@ -13,6 +13,8 @@
 		8260F501247FE16B00669FF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8260F500247FE16B00669FF7 /* SceneDelegate.swift */; };
 		8260F509247FE16B00669FF7 /* Reciplease.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8260F507247FE16B00669FF7 /* Reciplease.xcdatamodeld */; };
 		8260F50B247FE16C00669FF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8260F50A247FE16C00669FF7 /* Assets.xcassets */; };
+		8272220F248D750A00B9627A /* IngredientsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8272220E248D750A00B9627A /* IngredientsService.swift */; };
+		82722213248D800200B9627A /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82722212248D800200B9627A /* Ingredient.swift */; };
 		827DFC3024880F9C006ACD58 /* beau.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 827DFC2F24880F9C006ACD58 /* beau.ttf */; };
 		827DFC3424881507006ACD58 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827DFC3324881507006ACD58 /* CustomTabBarController.swift */; };
 		82EAC2DE247FF00500FA0861 /* IngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EAC2DD247FF00500FA0861 /* IngredientsViewController.swift */; };
@@ -27,6 +29,8 @@
 		8260F508247FE16B00669FF7 /* Reciplease.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reciplease.xcdatamodel; sourceTree = "<group>"; };
 		8260F50A247FE16C00669FF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8260F50F247FE16C00669FF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8272220E248D750A00B9627A /* IngredientsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsService.swift; sourceTree = "<group>"; };
+		82722212248D800200B9627A /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		827DFC2F24880F9C006ACD58 /* beau.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = beau.ttf; sourceTree = "<group>"; };
 		827DFC3324881507006ACD58 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		82EAC2DD247FF00500FA0861 /* IngredientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +81,8 @@
 		8260F516247FE62500669FF7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				82722212248D800200B9627A /* Ingredient.swift */,
+				8272220E248D750A00B9627A /* IngredientsService.swift */,
 				8260F507247FE16B00669FF7 /* Reciplease.xcdatamodeld */,
 			);
 			path = Model;
@@ -193,8 +199,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82722213248D800200B9627A /* Ingredient.swift in Sources */,
 				8260F509247FE16B00669FF7 /* Reciplease.xcdatamodeld in Sources */,
 				82EAC2DE247FF00500FA0861 /* IngredientsViewController.swift in Sources */,
+				8272220F248D750A00B9627A /* IngredientsService.swift in Sources */,
 				827DFC3424881507006ACD58 /* CustomTabBarController.swift in Sources */,
 				8260F4FF247FE16B00669FF7 /* AppDelegate.swift in Sources */,
 				8260F501247FE16B00669FF7 /* SceneDelegate.swift in Sources */,
