@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Ingredient {
+struct IngredientAdded {
     var name = ""
 }

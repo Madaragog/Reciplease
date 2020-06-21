@@ -12,9 +12,9 @@ class IngredientsService {
     static let shared = IngredientsService()
     private init() {}
 
-    private(set) var ingredients: [Ingredient] = []
+    private(set) var ingredients: [IngredientAdded] = []
 
-    func add(ingredient: Ingredient) {
+    func add(ingredient: IngredientAdded) {
         ingredients.append(ingredient)
     }
 

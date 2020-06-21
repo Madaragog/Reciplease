@@ -15,7 +15,7 @@ class IngredientsViewController: UIViewController {
     @IBOutlet weak var searchForRecipes: UIButton!
     @IBOutlet weak var ingredientsList: UITableView!
 
-    let requestService = RequestService()
+    let requestService = RecipeRequestService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +35,10 @@ class IngredientsViewController: UIViewController {
     @IBAction func tappedAddButton() {
         removeKeyboard()
         if ingredientTextField.text == "" {
-            ingredientTextField.text = "Add an ingredient "
-        } else {
-            guard let name = ingredientTextField.text else {
-                return
-            }
-            let ingredient = Ingredient(name: name)
+            ingredientTextField.placeholder = "Add an ingredient "
+        } else if let name = ingredientTextField.text {
+
+            let ingredient = IngredientAdded(name: name)
 
             IngredientsService.shared.add(ingredient: ingredient)
 
@@ -54,7 +52,13 @@ class IngredientsViewController: UIViewController {
     }
 
     @IBAction func tappedSearchForRecipesButton(_ sender: UIButton) {
-        requestService.request()
+        requestService.getRecipes { (recipes) in
+            if let recipes = recipes {
+                print(recipes)
+            } else {
+                print("nil nil nil")
+            }
+        }
     }
 
     // Removes the keyboard if displayed

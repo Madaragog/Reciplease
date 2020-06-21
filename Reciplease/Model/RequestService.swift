@@ -9,10 +9,23 @@
 import Foundation
 import Alamofire
 
-class RequestService {
+class RecipeRequestService {
+    private let apiId = APIKeyManager().recipeSearchAPIId
+    private let apiKey = APIKeyManager().recipeSearchAPIKey
+    private var ingredients = ""
+
     func request() {
-        AF.request("").response { response in
-            print(response)
+        implementIngredientsForRequest()
+        AF.request("https://api.edamam.com/search?app_id=\(apiId)&app_key=\(apiKey)&q=\(ingredients)",
+            method: .get).response { response in
+            debugPrint(response)
         }
+    }
+
+    private func implementIngredientsForRequest() {
+        for ingredient in IngredientsService.shared.ingredients {
+            self.ingredients.append("\(ingredient.name),")
+        }
+        print(ingredients)
     }
 }
