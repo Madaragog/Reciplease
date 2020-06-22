@@ -10,3 +10,9 @@ TabBar Icons sources :
 
 Font "Beau" source :
 - https://www.pixelsurplus.com/freebies/beau-free-serif-typeface
+
+Like Icon source :
+- Icons made by <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+
+Clock Icon source :
+- Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>

@@ -10,19 +10,19 @@ import Foundation
 import Alamofire
 
 class RecipeRequestService {
+    static let shared = RecipeRequestService()
+    private init() {}
+
+    var sharedRecipeList: [RecipeAdded] = []
+
     private let apiId = APIKeyManager().recipeSearchAPIId
     private let apiKey = APIKeyManager().recipeSearchAPIKey
 
-    private let manager: Session
-    init(manager: Session = Session.default) {
-        self.manager = manager
-    }
-
     func getRecipes(callback: @escaping ([RecipeAdded]?) -> Void) {
-        manager.cancelAllRequests()
+        AF.cancelAllRequests()
+        sharedRecipeList = []
         let ingredient = ingredientsStringCreation()
-        print(ingredient)
-        manager.request("https://api.edamam.com/search?app_id=\(apiId)&app_key=\(apiKey)&q=\(ingredient)",
+        AF.request("https://api.edamam.com/search?app_id=\(apiId)&app_key=\(apiKey)&q=\(ingredient)",
             method: .get).responseJSON { response in
                 guard let data = response.data, response.error == nil else {
                     callback(nil)
@@ -36,15 +36,35 @@ class RecipeRequestService {
                     callback(nil)
                     return
                 }
-                var recipeList = [RecipeAdded]()
+                var recipeList: [RecipeAdded] = []
                 for recipes in recipesResponse.hits {
-                    recipeList.append(RecipeAdded(name: recipes.recipe.label, imageUrl: recipes.recipe.image,
+                    recipeList.append(RecipeAdded(name: recipes.recipe.label,
+                                                       imageUrl: recipes.recipe.image,
                                                   originalRecipeUrl: recipes.recipe.url,
                                                   ingredientsDetails: recipes.recipe.ingredientLines,
-                                                  numberOfLikes: 0, preparationTime: recipes.recipe.totalTime))
+                                                  numberOfLikes: Int(arc4random_uniform(500)),
+                                                  preparationTime: Int(arc4random_uniform(40)),
+                                                  imageData: (UIImage(named: "DefaultRecipeImage")?.pngData())!))
                 }
-                callback(recipeList)
-                debugPrint(recipeList)
+                if recipeList.isEmpty {
+                    callback(nil)
+                } else {
+                    callback(recipeList)
+                }
+        }
+    }
+
+    func getImage(imageUrl: String, callback: @escaping (Data?) -> Void) {
+       AF.request(imageUrl).responseData { (response) in
+            guard let data = response.data, response.error == nil else {
+                callback(nil)
+                return
+            }
+            guard let response = response.response, response.statusCode == 200 else {
+                callback(nil)
+                return
+            }
+            callback(data)
         }
     }
 
@@ -53,7 +73,9 @@ class RecipeRequestService {
         for ingredient in IngredientsService.shared.ingredients {
             ingredients.append("\(ingredient.name.filter({!" ".contains($0) })),")
         }
-        ingredients.removeLast()
+        if ingredients != "" {
+            ingredients.removeLast()
+        }
         return ingredients
     }
 

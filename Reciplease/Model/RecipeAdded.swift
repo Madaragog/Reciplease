@@ -13,6 +13,7 @@ struct RecipeAdded {
     var imageUrl = ""
     var originalRecipeUrl = ""
     var ingredientsDetails: [String] = []
-    var numberOfLikes: Int = 0
+    var numberOfLikes = 0
     var preparationTime: Int = 0
+    var imageData: Data
 }

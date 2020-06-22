@@ -14,8 +14,7 @@ class IngredientsViewController: UIViewController {
     @IBOutlet weak var clearIngredientsButton: UIButton!
     @IBOutlet weak var searchForRecipes: UIButton!
     @IBOutlet weak var ingredientsList: UITableView!
-
-    let requestService = RecipeRequestService()
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,13 +51,30 @@ class IngredientsViewController: UIViewController {
     }
 
     @IBAction func tappedSearchForRecipesButton(_ sender: UIButton) {
-        requestService.getRecipes { (recipes) in
+        showActivityIndicatorAndHideButtonOrTheReverse(hideButton: true)
+        RecipeRequestService.shared.getRecipes { (recipes) in
             if let recipes = recipes {
-                print(recipes)
+                for recipe in recipes {
+                    var recipeWithImage = recipe
+                    RecipeRequestService.shared.getImage(imageUrl: recipe.imageUrl) { (downloadedImage) in
+                        if let downloadedImage = downloadedImage {
+                            recipeWithImage.imageData = downloadedImage
+                        }
+                        RecipeRequestService.shared.sharedRecipeList.append(recipeWithImage)
+                    }
+                }
+                self.showActivityIndicatorAndHideButtonOrTheReverse(hideButton: false)
+                self.performSegue(withIdentifier: "RecipeListSegue", sender: nil)
             } else {
-                print("nil nil nil")
+                self.ingredientTextField.text = ""
+                self.ingredientTextField.placeholder = "Error, please retry"
             }
         }
+    }
+
+    private func showActivityIndicatorAndHideButtonOrTheReverse(hideButton: Bool) {
+        searchForRecipes.isHidden = hideButton
+        activityIndicator.isHidden = !hideButton
     }
 
     // Removes the keyboard if displayed

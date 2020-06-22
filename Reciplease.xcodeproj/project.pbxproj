@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		2F44408FFE69A49DAE6BBE54 /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 875C5D9D46F53675C209D821 /* Pods_Reciplease.framework */; };
+		321C22D787AFF625B6134C17 /* Pods_RecipleaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 729B6C1803381E09C59A1F71 /* Pods_RecipleaseTests.framework */; };
 		8207E0AB248DA64F00E77DD7 /* RecipeRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8207E0AA248DA64F00E77DD7 /* RecipeRequestService.swift */; };
 		8207E0AD248DA7B900E77DD7 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8207E0AC248DA7B900E77DD7 /* .swiftlint.yml */; };
 		8207E0AF248DA9CA00E77DD7 /* APIKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8207E0AE248DA9CA00E77DD7 /* APIKeyManager.swift */; };
 		820C4B6C247FE6E20028181A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 820C4B6B247FE6E20028181A /* Main.storyboard */; };
 		820C4B6E247FE6F80028181A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 820C4B6D247FE6F80028181A /* LaunchScreen.storyboard */; };
+		82358A6E24A076EC0010E188 /* SearchRecipesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82358A6D24A076EC0010E188 /* SearchRecipesListViewController.swift */; };
+		82358A7024A07E1C0010E188 /* CacheRecipesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82358A6F24A07E1C0010E188 /* CacheRecipesListTableViewCell.swift */; };
 		8260F4FF247FE16B00669FF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8260F4FE247FE16B00669FF7 /* AppDelegate.swift */; };
 		8260F501247FE16B00669FF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8260F500247FE16B00669FF7 /* SceneDelegate.swift */; };
 		8260F509247FE16B00669FF7 /* Reciplease.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8260F507247FE16B00669FF7 /* Reciplease.xcdatamodeld */; };
@@ -21,13 +24,11 @@
 		82722213248D800200B9627A /* IngredientAdded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82722212248D800200B9627A /* IngredientAdded.swift */; };
 		827DFC3024880F9C006ACD58 /* beau.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 827DFC2F24880F9C006ACD58 /* beau.ttf */; };
 		827DFC3424881507006ACD58 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827DFC3324881507006ACD58 /* CustomTabBarController.swift */; };
+		82A12833249F336F00AE4943 /* RecipeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 82A12832249F336F00AE4943 /* RecipeData.json */; };
 		82A4A96C249737EB000F0D3B /* RecipeAdded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4A96B249737EB000F0D3B /* RecipeAdded.swift */; };
 		82A4A974249755C1000F0D3B /* IngredientsServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4A973249755C1000F0D3B /* IngredientsServiceTest.swift */; };
 		82A4A97E2497C81B000F0D3B /* RecipeRequestServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4A97D2497C81B000F0D3B /* RecipeRequestServiceTest.swift */; };
-		82B3E2AE249C6D00008D82A1 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3E2AD249C6D00008D82A1 /* MockURLProtocol.swift */; };
 		82EAC2DE247FF00500FA0861 /* IngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EAC2DD247FF00500FA0861 /* IngredientsViewController.swift */; };
-		82F665CD249C847300A4934A /* Recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 82F665CC249C847300A4934A /* Recipes.json */; };
-		9A465CAA3C773791FA280955 /* Pods_RecipleaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9067EE74CDDF816B7E918243 /* Pods_RecipleaseTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,13 +42,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		399D00C937A0A5F746AF658F /* Pods-RecipleaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipleaseTests.debug.xcconfig"; path = "Target Support Files/Pods-RecipleaseTests/Pods-RecipleaseTests.debug.xcconfig"; sourceTree = "<group>"; };
+		57D76BA0A845F0C7A0A032AB /* Pods-RecipleaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipleaseTests.debug.xcconfig"; path = "Target Support Files/Pods-RecipleaseTests/Pods-RecipleaseTests.debug.xcconfig"; sourceTree = "<group>"; };
+		729B6C1803381E09C59A1F71 /* Pods_RecipleaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipleaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7928AE833C15F00BF81EFEBB /* Pods-Reciplease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.debug.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.debug.xcconfig"; sourceTree = "<group>"; };
 		8207E0AA248DA64F00E77DD7 /* RecipeRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRequestService.swift; sourceTree = "<group>"; };
 		8207E0AC248DA7B900E77DD7 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		8207E0AE248DA9CA00E77DD7 /* APIKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyManager.swift; sourceTree = "<group>"; };
 		820C4B6B247FE6E20028181A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		820C4B6D247FE6F80028181A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		82358A6D24A076EC0010E188 /* SearchRecipesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipesListViewController.swift; sourceTree = "<group>"; };
+		82358A6F24A07E1C0010E188 /* CacheRecipesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheRecipesListTableViewCell.swift; sourceTree = "<group>"; };
 		8260F4FB247FE16B00669FF7 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8260F4FE247FE16B00669FF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8260F500247FE16B00669FF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,18 +62,16 @@
 		82722212248D800200B9627A /* IngredientAdded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientAdded.swift; sourceTree = "<group>"; };
 		827DFC2F24880F9C006ACD58 /* beau.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = beau.ttf; sourceTree = "<group>"; };
 		827DFC3324881507006ACD58 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		82A12832249F336F00AE4943 /* RecipeData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RecipeData.json; sourceTree = "<group>"; };
 		82A4A96B249737EB000F0D3B /* RecipeAdded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAdded.swift; sourceTree = "<group>"; };
 		82A4A971249755C1000F0D3B /* RecipleaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82A4A973249755C1000F0D3B /* IngredientsServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsServiceTest.swift; sourceTree = "<group>"; };
 		82A4A975249755C1000F0D3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82A4A97D2497C81B000F0D3B /* RecipeRequestServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRequestServiceTest.swift; sourceTree = "<group>"; };
-		82B3E2AD249C6D00008D82A1 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		82EAC2DD247FF00500FA0861 /* IngredientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewController.swift; sourceTree = "<group>"; };
-		82F665CC249C847300A4934A /* Recipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Recipes.json; sourceTree = "<group>"; };
 		875C5D9D46F53675C209D821 /* Pods_Reciplease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reciplease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9067EE74CDDF816B7E918243 /* Pods_RecipleaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipleaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C24A4D9A9BFA5D17D0CB81DA /* Pods-Reciplease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.release.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.release.xcconfig"; sourceTree = "<group>"; };
-		CE538DD28F767407DC6DD56E /* Pods-RecipleaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipleaseTests.release.xcconfig"; path = "Target Support Files/Pods-RecipleaseTests/Pods-RecipleaseTests.release.xcconfig"; sourceTree = "<group>"; };
+		F62414D0B00C11453DE63D9C /* Pods-RecipleaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipleaseTests.release.xcconfig"; path = "Target Support Files/Pods-RecipleaseTests/Pods-RecipleaseTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A465CAA3C773791FA280955 /* Pods_RecipleaseTests.framework in Frameworks */,
+				321C22D787AFF625B6134C17 /* Pods_RecipleaseTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +148,7 @@
 			children = (
 				820C4B6B247FE6E20028181A /* Main.storyboard */,
 				820C4B6D247FE6F80028181A /* LaunchScreen.storyboard */,
+				82358A6F24A07E1C0010E188 /* CacheRecipesListTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			children = (
 				827DFC3324881507006ACD58 /* CustomTabBarController.swift */,
 				82EAC2DD247FF00500FA0861 /* IngredientsViewController.swift */,
+				82358A6D24A076EC0010E188 /* SearchRecipesListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -165,8 +169,7 @@
 				82A4A973249755C1000F0D3B /* IngredientsServiceTest.swift */,
 				82A4A97D2497C81B000F0D3B /* RecipeRequestServiceTest.swift */,
 				82A4A975249755C1000F0D3B /* Info.plist */,
-				82B3E2AD249C6D00008D82A1 /* MockURLProtocol.swift */,
-				82F665CC249C847300A4934A /* Recipes.json */,
+				82A12832249F336F00AE4943 /* RecipeData.json */,
 			);
 			path = RecipleaseTests;
 			sourceTree = "<group>";
@@ -175,7 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				875C5D9D46F53675C209D821 /* Pods_Reciplease.framework */,
-				9067EE74CDDF816B7E918243 /* Pods_RecipleaseTests.framework */,
+				729B6C1803381E09C59A1F71 /* Pods_RecipleaseTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -185,8 +188,8 @@
 			children = (
 				7928AE833C15F00BF81EFEBB /* Pods-Reciplease.debug.xcconfig */,
 				C24A4D9A9BFA5D17D0CB81DA /* Pods-Reciplease.release.xcconfig */,
-				399D00C937A0A5F746AF658F /* Pods-RecipleaseTests.debug.xcconfig */,
-				CE538DD28F767407DC6DD56E /* Pods-RecipleaseTests.release.xcconfig */,
+				57D76BA0A845F0C7A0A032AB /* Pods-RecipleaseTests.debug.xcconfig */,
+				F62414D0B00C11453DE63D9C /* Pods-RecipleaseTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -218,11 +221,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 82A4A97A249755C1000F0D3B /* Build configuration list for PBXNativeTarget "RecipleaseTests" */;
 			buildPhases = (
-				6A3D786013F9D3400408E38A /* [CP] Check Pods Manifest.lock */,
+				D27027AD514FAB00F48D4DB4 /* [CP] Check Pods Manifest.lock */,
 				82A4A96D249755C1000F0D3B /* Sources */,
 				82A4A96E249755C1000F0D3B /* Frameworks */,
 				82A4A96F249755C1000F0D3B /* Resources */,
-				8DAFF4F4BDD9E3319EACADD4 /* [CP] Embed Pods Frameworks */,
+				87886289052A6A9AB41399CA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -289,7 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82F665CD249C847300A4934A /* Recipes.json in Resources */,
+				82A12833249F336F00AE4943 /* RecipeData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,7 +338,41 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6A3D786013F9D3400408E38A /* [CP] Check Pods Manifest.lock */ = {
+		8260F515247FE45200669FF7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		87886289052A6A9AB41399CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecipleaseTests/Pods-RecipleaseTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecipleaseTests/Pods-RecipleaseTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecipleaseTests/Pods-RecipleaseTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D27027AD514FAB00F48D4DB4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -357,40 +394,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8260F515247FE45200669FF7 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		8DAFF4F4BDD9E3319EACADD4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RecipleaseTests/Pods-RecipleaseTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RecipleaseTests/Pods-RecipleaseTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecipleaseTests/Pods-RecipleaseTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -398,10 +401,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82358A7024A07E1C0010E188 /* CacheRecipesListTableViewCell.swift in Sources */,
 				8207E0AF248DA9CA00E77DD7 /* APIKeyManager.swift in Sources */,
 				82722213248D800200B9627A /* IngredientAdded.swift in Sources */,
 				8260F509247FE16B00669FF7 /* Reciplease.xcdatamodeld in Sources */,
 				82A4A96C249737EB000F0D3B /* RecipeAdded.swift in Sources */,
+				82358A6E24A076EC0010E188 /* SearchRecipesListViewController.swift in Sources */,
 				82EAC2DE247FF00500FA0861 /* IngredientsViewController.swift in Sources */,
 				8207E0AB248DA64F00E77DD7 /* RecipeRequestService.swift in Sources */,
 				8272220F248D750A00B9627A /* IngredientsService.swift in Sources */,
@@ -415,7 +420,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82B3E2AE249C6D00008D82A1 /* MockURLProtocol.swift in Sources */,
 				82A4A97E2497C81B000F0D3B /* RecipeRequestServiceTest.swift in Sources */,
 				82A4A974249755C1000F0D3B /* IngredientsServiceTest.swift in Sources */,
 			);
@@ -589,11 +593,12 @@
 		};
 		82A4A978249755C1000F0D3B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 399D00C937A0A5F746AF658F /* Pods-RecipleaseTests.debug.xcconfig */;
+			baseConfigurationReference = 57D76BA0A845F0C7A0A032AB /* Pods-RecipleaseTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y76M773K4Z;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = RecipleaseTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -611,11 +616,12 @@
 		};
 		82A4A979249755C1000F0D3B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE538DD28F767407DC6DD56E /* Pods-RecipleaseTests.release.xcconfig */;
+			baseConfigurationReference = F62414D0B00C11453DE63D9C /* Pods-RecipleaseTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y76M773K4Z;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = RecipleaseTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
