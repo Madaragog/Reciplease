@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RecipeAdded {
+struct RecipeAdded: Equatable {
     var name = ""
     var imageUrl = ""
     var originalRecipeUrl = ""
