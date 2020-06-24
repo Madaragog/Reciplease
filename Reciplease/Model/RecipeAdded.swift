@@ -15,5 +15,4 @@ struct RecipeAdded {
     var ingredientsDetails: [String] = []
     var numberOfLikes = 0
     var preparationTime: Int = 0
-    var imageData: Data
 }

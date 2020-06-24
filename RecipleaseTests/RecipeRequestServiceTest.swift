@@ -9,27 +9,19 @@
 @testable import Reciplease
 import Mockingjay
 import XCTest
-/*
+
 class RecipeRequestServiceTest: XCTestCase {
-    let recipeRequestService = RecipeRequestService()
-    let matcher = uri("https://openclassrooms.com/")
-    override func setUp() {
-      super.setUp()
-      let url = Bundle(for: type(of: self)).url(forResource: "RecipeData", withExtension: "json")!
-      let data = try! Data(contentsOf: url)
-        stub(matcher, jsonData(data))
+    let recipeRequestService = RecipeRequestService.shared
+/*
+    func test() {
+        let url = Bundle(for: type(of: self)).url(forResource: "RecipeData", withExtension: "json")!
+        let data = try! Data(contentsOf: url)
+        stub(everything, json(data))
     }
-
-    class ConverterError: NSError {}
-    let error = ConverterError()
-
-    func builder(request: URLRequest) -> Response {
-        return .failure(error)
-    }
-
+*/
     func testGetRecipesShouldPostFailCallbackIfError() {
 //        given
-        stub(matcher, builder(request:))
+        stub(everything, failure(NSError(domain: "", code: 1, userInfo: nil)))
 
         let expectation = XCTestExpectation(description: "waiting for nil callback")
 //        when
@@ -40,4 +32,3 @@ class RecipeRequestServiceTest: XCTestCase {
         wait(for: [expectation], timeout: 0.1)
     }
 }
-*/

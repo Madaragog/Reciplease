@@ -28,10 +28,16 @@ class CacheRecipesListTableViewCell: UITableViewCell {
         recipeLikesAndTimeView.addViewBorder(borderColor: #colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 1), borderWith: 1.0, borderCornerRadius: 4)
     }
 // swiftlint:disable function_parameter_count
-    func configure(recipeImage: Data, recipeTitle: String, recipeDetail: String,
+    func configure(recipe: RecipeAdded, recipeTitle: String, recipeDetail: String,
                    recipeLikesNumber: Int, recipeLikesImage: String, recipeTime: Int,
                    recipeTimeImage: String) {
-        recipeImageView.image = UIImage(data: recipeImage)
+        RecipeRequestService.shared.getImage(imageUrl: recipe.imageUrl) { (downloadedImage) in
+            if let downloadedImage = downloadedImage {
+                self.recipeImageView.image = UIImage(data: downloadedImage)
+            } else {
+                self.recipeImageView.image = UIImage(named: "DefaultRecipeImage")
+            }
+        }
         recipeTitleLabel.text = recipeTitle
         recipeDetailLabel.text = "\(recipeDetail) ..."
         let recipeLikes = String(recipeLikesNumber)
@@ -41,14 +47,15 @@ class CacheRecipesListTableViewCell: UITableViewCell {
         recipeTimeLabel.text = " \(time)m"
         recipeTimeIcon.image = UIImage(named: recipeTimeImage)
     }
-}
 
-extension CacheRecipesListTableViewCell {
     private func addShadow() {
-        recipeInfoStackView.layer.shadowColor = UIColor.black.cgColor
-        recipeInfoStackView.layer.shadowOpacity = 1
-        recipeInfoStackView.layer.shadowOffset = .zero
-        recipeInfoStackView.layer.shadowRadius = 10
+        let colorTop = UIColor.clear.cgColor
+        let colorBottom = UIColor.black.cgColor
+        let layer = CAGradientLayer()
+        layer.frame = CGRect(x: 0, y: 63, width: .max, height: 65)
+        layer.colors = [colorTop, colorBottom]
+//        layer.locations = [0.0, 0.5]
+        recipeImageView.layer.addSublayer(layer)
     }
 }
 

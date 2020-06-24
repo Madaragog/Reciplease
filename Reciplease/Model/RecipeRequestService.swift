@@ -36,20 +36,18 @@ class RecipeRequestService {
                     callback(nil)
                     return
                 }
-                var recipeList: [RecipeAdded] = []
                 for recipes in recipesResponse.hits {
-                    recipeList.append(RecipeAdded(name: recipes.recipe.label,
+                    self.sharedRecipeList.append(RecipeAdded(name: recipes.recipe.label,
                                                        imageUrl: recipes.recipe.image,
                                                   originalRecipeUrl: recipes.recipe.url,
                                                   ingredientsDetails: recipes.recipe.ingredientLines,
                                                   numberOfLikes: Int(arc4random_uniform(500)),
-                                                  preparationTime: Int(arc4random_uniform(40)),
-                                                  imageData: (UIImage(named: "DefaultRecipeImage")?.pngData())!))
+                                                  preparationTime: Int(arc4random_uniform(40))))
                 }
-                if recipeList.isEmpty {
+                if self.sharedRecipeList.isEmpty {
                     callback(nil)
                 } else {
-                    callback(recipeList)
+                    callback(self.sharedRecipeList)
                 }
         }
     }

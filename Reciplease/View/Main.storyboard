@@ -312,17 +312,17 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bZN-8d-byo" userLabel="Info Stack View">
-                                                    <rect key="frame" x="16" y="77.666666666666671" width="382" height="34.333333333333329"/>
+                                                    <rect key="frame" x="16" y="68.666666666666671" width="382" height="43.333333333333329"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0L-Kf-ofv">
-                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="18.333333333333332"/>
-                                                            <fontDescription key="fontDescription" name="Beau-Regular" family="Beau" pointSize="16"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="25"/>
+                                                            <fontDescription key="fontDescription" name="Beau-Regular" family="Beau" pointSize="22"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqe-JN-PpN">
-                                                            <rect key="frame" x="0.0" y="18.333333333333329" width="382" height="16"/>
-                                                            <fontDescription key="fontDescription" name="Beau-Regular" family="Beau" pointSize="14"/>
+                                                            <rect key="frame" x="0.0" y="25" width="382" height="18.333333333333329"/>
+                                                            <fontDescription key="fontDescription" name="Beau-Regular" family="Beau" pointSize="16"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -403,6 +403,7 @@
                                             <outlet property="recipeTimeLabel" destination="3LQ-wt-VHA" id="DTn-mY-44O"/>
                                             <outlet property="recipeTimeStackView" destination="Kbk-yR-Kl6" id="seD-kT-3S4"/>
                                             <outlet property="recipeTitleLabel" destination="w0L-Kf-ofv" id="oP9-Ci-StN"/>
+                                            <segue destination="68S-qD-jvw" kind="show" id="G3D-Om-Z9G"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -420,7 +421,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sIs-u3-g40"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Reciplease" id="eqo-jR-csy"/>
+                    <navigationItem key="navigationItem" title="Reciplease" id="eqo-jR-csy">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="pRu-So-9gN"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="9Iv-xB-cRE" id="zg1-fe-mKe"/>
                     </connections>
@@ -429,9 +432,36 @@
             </objects>
             <point key="canvasLocation" x="260.86956521739131" y="-568.20652173913049"/>
         </scene>
+        <!--Reciplease-->
+        <scene sceneID="c67-R6-E56">
+            <objects>
+                <viewController id="68S-qD-jvw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bmn-IQ-VGI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Jf4-bl-FSA"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Reciplease" id="RCg-ca-3kP">
+                        <barButtonItem key="rightBarButtonItem" style="done" id="oEN-2L-fKf">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qkV-s5-wpH">
+                                <rect key="frame" x="364" y="7" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="StarIcon">
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GMz-2r-eps" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1119" y="-568"/>
+        </scene>
     </scenes>
     <resources>
         <image name="LikesIcon" width="20" height="20"/>
+        <image name="StarIcon" width="30" height="30"/>
         <image name="TabBarSearchIcon" width="20" height="20"/>
         <image name="TimeIcon" width="20" height="20"/>
     </resources>

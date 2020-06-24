@@ -53,22 +53,13 @@ class IngredientsViewController: UIViewController {
     @IBAction func tappedSearchForRecipesButton(_ sender: UIButton) {
         showActivityIndicatorAndHideButtonOrTheReverse(hideButton: true)
         RecipeRequestService.shared.getRecipes { (recipes) in
-            if let recipes = recipes {
-                for recipe in recipes {
-                    var recipeWithImage = recipe
-                    RecipeRequestService.shared.getImage(imageUrl: recipe.imageUrl) { (downloadedImage) in
-                        if let downloadedImage = downloadedImage {
-                            recipeWithImage.imageData = downloadedImage
-                        }
-                        RecipeRequestService.shared.sharedRecipeList.append(recipeWithImage)
-                    }
-                }
-                self.showActivityIndicatorAndHideButtonOrTheReverse(hideButton: false)
+            if recipes != nil {
                 self.performSegue(withIdentifier: "RecipeListSegue", sender: nil)
             } else {
                 self.ingredientTextField.text = ""
                 self.ingredientTextField.placeholder = "Error, please retry"
             }
+            self.showActivityIndicatorAndHideButtonOrTheReverse(hideButton: false)
         }
     }
 

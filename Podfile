@@ -7,7 +7,6 @@ target 'Reciplease' do
 
   # Pods for Reciplease
   pod 'Alamofire'
-  pod 'Mockingjay', '3.0.0-alpha.1'
 end
 
 target 'RecipleaseTests' do

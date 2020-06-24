@@ -38,7 +38,7 @@ extension SearchRecipesListViewController: UITableViewDataSource {
 
         let recipe = RecipeRequestService.shared.sharedRecipeList[indexPath.row]
 
-        cell.configure(recipeImage: recipe.imageData, recipeTitle: recipe.name,
+        cell.configure(recipe: recipe, recipeTitle: recipe.name,
                        recipeDetail: recipe.ingredientsDetails[0],
                        recipeLikesNumber: recipe.numberOfLikes,
                        recipeLikesImage: "LikesIcon",

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Mockingjay
 
 class IngredientsService {
     static let shared = IngredientsService()
