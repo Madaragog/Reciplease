@@ -12,6 +12,14 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+// Access to persistentContainer
+    static var persistentContainer: NSPersistentContainer {
+        return (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer
+    }
+// Access the viewContext of persitentContainer
+    static var viewContext: NSManagedObjectContext {
+        return persistentContainer.viewContext
+    }
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

@@ -17,6 +17,14 @@ class RecipeRequestServiceTest: XCTestCase {
         let data = try? Data(contentsOf: url)
         return data!
     }
+
+    var emptyCorrectData: Data {
+        let url = Bundle(for: type(of: self)).url(forResource: "emptyCorrectData",
+                                                  withExtension: "json")!
+        let data = try? Data(contentsOf: url)
+        return data!
+    }
+
     var incorrectJson: Data {
         let url = Bundle(for: type(of: self)).url(forResource: "IncorrectJSON", withExtension: "json")!
         let data = try? Data(contentsOf: url)
@@ -59,6 +67,20 @@ class RecipeRequestServiceTest: XCTestCase {
         recipeRequestService.getRecipes { (recipes) in
 //        Then
             XCTAssertNil(recipes)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.1)
+    }
+
+    func testGetRecipesShouldPostFailCallbackIfNoErrorAndCorrectButEmptyData() {
+//        Given
+        stub(everything, jsonData(emptyCorrectData))
+//        When
+        let expectation = XCTestExpectation(description: "Wait fail callback")
+        recipeRequestService.getRecipes { (recipes) in
+//        Then
+            XCTAssertNil(recipes)
+            XCTAssertTrue(self.recipeRequestService.sharedRecipeList.isEmpty)
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.1)
@@ -125,5 +147,25 @@ class RecipeRequestServiceTest: XCTestCase {
             XCTAssertNil(image)
             expectation.fulfill()
         }
+    }
+
+    func testGetImageShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
+//        Given
+        stub(everything, builder(request:))
+//        When
+        let expectation = XCTestExpectation(description: "Wait success callback")
+//        Then
+        recipeRequestService.getImage(imageUrl: "") { (image) in
+            print("SADJKNGJKRF \(String(describing: image))")
+            XCTAssertNotNil(image)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.1)
+    }
+
+    private func builder(request: URLRequest) -> Response {
+        let image = UIImage(named: "DefaultRecipeImage")!.pngData()!
+        let response = HTTPURLResponse(url: URL(string: "")!, statusCode: 200, httpVersion: nil, headerFields: nil)!
+        return .success(response, .content(image))
     }
 }

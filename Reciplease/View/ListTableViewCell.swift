@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CacheRecipesListTableViewCell: UITableViewCell {
+class ListTableViewCell: UITableViewCell {
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var recipeInfoStackView: UIStackView!
     @IBOutlet weak var recipeTitleLabel: UILabel!
@@ -22,40 +22,37 @@ class CacheRecipesListTableViewCell: UITableViewCell {
     @IBOutlet weak var recipeTimeLabel: UILabel!
     @IBOutlet weak var recipeTimeIcon: UIImageView!
 
+    var recipeUrl = ""
+    var recipeImageUrl = ""
+    var recipeImage: UIImage?
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        addShadow()
+        recipeImageView.addShadow(yValue: 63, height: 65, color: UIColor.black.cgColor)
         recipeLikesAndTimeView.addViewBorder(borderColor: #colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 1), borderWith: 1.0, borderCornerRadius: 4)
     }
-// swiftlint:disable function_parameter_count
-    func configure(recipe: RecipeAdded, recipeTitle: String, recipeDetail: String,
-                   recipeLikesNumber: Int, recipeLikesImage: String, recipeTime: Int,
-                   recipeTimeImage: String) {
+
+    func configure(recipe: RecipeAdded) {
         RecipeRequestService.shared.getImage(imageUrl: recipe.imageUrl) { (downloadedImage) in
             if let downloadedImage = downloadedImage {
                 self.recipeImageView.image = UIImage(data: downloadedImage)
+                self.recipeImage = UIImage(data: downloadedImage)
             } else {
                 self.recipeImageView.image = UIImage(named: "DefaultRecipeImage")
+                self.recipeImage = UIImage(named: "DefaultRecipeImage")
             }
         }
-        recipeTitleLabel.text = recipeTitle
-        recipeDetailLabel.text = "\(recipeDetail) ..."
-        let recipeLikes = String(recipeLikesNumber)
+        recipeTitleLabel.text = recipe.name
+        recipeDetailLabel.text = "\(recipe.ingredientsDetails[0]) ..."
+        let recipeLikes = String(recipe.numberOfLikes)
         recipeLikesLabel.text = " \(recipeLikes)"
-        recipeLikesIcon.image = UIImage(named: recipeLikesImage)
-        let time = String(recipeTime)
+        recipeLikesIcon.image = UIImage(named: "LikesIcon")
+        let time = String(recipe.preparationTime)
         recipeTimeLabel.text = " \(time)m"
-        recipeTimeIcon.image = UIImage(named: recipeTimeImage)
-    }
-
-    private func addShadow() {
-        let colorTop = UIColor.clear.cgColor
-        let colorBottom = UIColor.black.cgColor
-        let layer = CAGradientLayer()
-        layer.frame = CGRect(x: 0, y: 63, width: .max, height: 65)
-        layer.colors = [colorTop, colorBottom]
-//        layer.locations = [0.0, 0.5]
-        recipeImageView.layer.addSublayer(layer)
+        recipeTimeIcon.image = UIImage(named: "TimeIcon")
+//        allIngredients = recipe.ingredientsDetails
+        recipeUrl = recipe.originalRecipeUrl
+        recipeImageUrl = recipe.imageUrl
     }
 }
 
@@ -65,5 +62,18 @@ extension UIView {
         self.layer.borderColor = borderColor
         self.layer.cornerRadius = borderCornerRadius
 
+    }
+
+    public func addBorder(borderCornerRadius: CGFloat) {
+        self.layer.cornerRadius = borderCornerRadius
+    }
+
+    public func addShadow(yValue: Int, height: Int, color: CGColor) {
+        let colorTop = UIColor.clear.cgColor
+        let colorBottom = color
+        let layer = CAGradientLayer()
+        layer.frame = CGRect(x: 0, y: yValue, width: 500, height: height)
+        layer.colors = [colorTop, colorBottom]
+        self.layer.addSublayer(layer)
     }
 }

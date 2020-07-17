@@ -20,6 +20,9 @@ class IngredientsViewController: UIViewController {
         super.viewDidLoad()
         ingredientTextField.setUnderLine()
         setPlaceholder()
+        addIngredientsButton.addBorder(borderCornerRadius: 4)
+        clearIngredientsButton.addBorder(borderCornerRadius: 4)
+        searchForRecipes.addBorder(borderCornerRadius: 4)
     }
 
     override func viewWillAppear(_ animated: Bool) {
