@@ -12,7 +12,7 @@ import CoreData
 class SavedRecipe: NSManagedObject {
     let separator = "#"
     var ingredientsToStringArray = [""]
-
+// converts recipe of type SavedRecipe to RecipeAdded type
     func toRecipeAdded() -> RecipeAdded {
         let ingredientsDetailsSplited = self.ingredientsDetails?.split(separator: "#").map(String.init)
 
@@ -24,7 +24,7 @@ class SavedRecipe: NSManagedObject {
                            ingredientsDetails: ingredientsToStringArray, numberOfLikes: Int(numberOfLikes),
                            preparationTime: Int(preparationTime))
     }
-
+// converts recipe of type RecipeAdded to SavedRecipe type
     func from(recipe: RecipeAdded) {
         self.imageUrl = recipe.imageUrl
         self.ingredientsDetails = recipe.ingredientsDetails.joined(separator: separator)

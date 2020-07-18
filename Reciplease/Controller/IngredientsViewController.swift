@@ -29,11 +29,11 @@ class IngredientsViewController: UIViewController {
         super.viewWillAppear(animated)
         ingredientsList.reloadData()
     }
-
+// calls RemoveKeyboard
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         removeKeyboard()
     }
-
+// add an ingredient to ingredientsList or displays an error message if wrong entry
     @IBAction func tappedAddButton() {
         removeKeyboard()
         if ingredientTextField.text == "" {
@@ -47,12 +47,12 @@ class IngredientsViewController: UIViewController {
             ingredientsList.reloadData()
         }
     }
-
+// clears ingredientsList
     @IBAction func tappedClearButton() {
         IngredientsService.shared.removeAll()
         ingredientsList.reloadData()
     }
-
+// calls get recipes the performs a segue or shows an error if the latter occurs
     @IBAction func tappedSearchForRecipesButton(_ sender: UIButton) {
         showActivityIndicatorAndHideButtonOrTheReverse(hideButton: true)
         RecipeRequestService.shared.getRecipes { (recipes) in
@@ -86,6 +86,7 @@ class IngredientsViewController: UIViewController {
 }
 
 extension UITextField {
+//    adds an underline to a UITextField
     func setUnderLine() {
         let border = CALayer()
         let width = CGFloat(0.5)

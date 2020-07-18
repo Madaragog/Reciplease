@@ -17,7 +17,7 @@ class RecipeRequestService {
 
     private let apiId = APIKeyManager().recipeSearchAPIId
     private let apiKey = APIKeyManager().recipeSearchAPIKey
-
+// gets All the recipes related with the ingredients added to the request
     func getRecipes(callback: @escaping ([RecipeAdded]?) -> Void) {
         AF.cancelAllRequests()
         sharedRecipeList = []
@@ -51,7 +51,7 @@ class RecipeRequestService {
                 }
         }
     }
-
+// gets the image of a recipe
     func getImage(imageUrl: String, callback: @escaping (Data?) -> Void) {
        AF.request(imageUrl).responseData { (response) in
             guard let data = response.data, response.error == nil else {
@@ -65,7 +65,7 @@ class RecipeRequestService {
             callback(data)
         }
     }
-
+// creates the correct string of ingredients for the request of getRecipes
     private func ingredientsStringCreation() -> String {
         var ingredients = ""
         for ingredient in IngredientsService.shared.ingredients {

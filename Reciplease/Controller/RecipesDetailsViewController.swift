@@ -36,7 +36,7 @@ class RecipesDetailsViewController: UIViewController {
         tableView.reloadData()
         ifRecipeIsFavorite()
     }
-
+// adds a recipe to the favorites or removes it
     @IBAction func didTapFavoriteButton(_ sender: Any) {
         guard let recipe = recipe else {
             print("recipe error")
@@ -53,12 +53,12 @@ class RecipesDetailsViewController: UIViewController {
         }
         buttonActive = !buttonActive
     }
-
+// launches the recipe web page
     @IBAction func didPressGetDirectionsButton(_ sender: Any) {
             UIApplication.shared.open((URL(string: recipe!.originalRecipeUrl) ?? URL(string:
                                         "https://www.google.com/"))!, options: [:], completionHandler: nil)
     }
-
+// checks if the recipe is favorite
     private func ifRecipeIsFavorite() {
         guard let recipe = recipe else {
             return
@@ -71,7 +71,7 @@ class RecipesDetailsViewController: UIViewController {
             buttonActive = false
         }
     }
-
+// unwraps recipeImage and recipe then configures them
     private func configure() {
         if let recipeImage = recipeImage {
             recipeImageView.image = recipeImage

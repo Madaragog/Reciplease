@@ -31,7 +31,7 @@ class ListTableViewCell: UITableViewCell {
         recipeImageView.addShadow(yValue: 63, height: 65, color: UIColor.black.cgColor)
         recipeLikesAndTimeView.addViewBorder(borderColor: #colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 1), borderWith: 1.0, borderCornerRadius: 4)
     }
-
+// gets the recipe image and prepares the cell
     func configure(recipe: RecipeAdded) {
         RecipeRequestService.shared.getImage(imageUrl: recipe.imageUrl) { (downloadedImage) in
             if let downloadedImage = downloadedImage {
@@ -50,24 +50,24 @@ class ListTableViewCell: UITableViewCell {
         let time = String(recipe.preparationTime)
         recipeTimeLabel.text = " \(time)m"
         recipeTimeIcon.image = UIImage(named: "TimeIcon")
-//        allIngredients = recipe.ingredientsDetails
         recipeUrl = recipe.originalRecipeUrl
         recipeImageUrl = recipe.imageUrl
     }
 }
 
 extension UIView {
+//    adds a border with color and ajustable width to a UIView
     public func addViewBorder(borderColor: CGColor, borderWith: CGFloat, borderCornerRadius: CGFloat) {
         self.layer.borderWidth = borderWith
         self.layer.borderColor = borderColor
         self.layer.cornerRadius = borderCornerRadius
 
     }
-
+// adds simple border to a UIView
     public func addBorder(borderCornerRadius: CGFloat) {
         self.layer.cornerRadius = borderCornerRadius
     }
-
+// adds a shadow to a UIView
     public func addShadow(yValue: Int, height: Int, color: CGColor) {
         let colorTop = UIColor.clear.cgColor
         let colorBottom = color

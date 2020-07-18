@@ -148,24 +148,4 @@ class RecipeRequestServiceTest: XCTestCase {
             expectation.fulfill()
         }
     }
-
-    func testGetImageShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
-//        Given
-        stub(everything, builder(request:))
-//        When
-        let expectation = XCTestExpectation(description: "Wait success callback")
-//        Then
-        recipeRequestService.getImage(imageUrl: "") { (image) in
-            print("SADJKNGJKRF \(String(describing: image))")
-            XCTAssertNotNil(image)
-            expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 0.1)
-    }
-
-    private func builder(request: URLRequest) -> Response {
-        let image = UIImage(named: "DefaultRecipeImage")!.pngData()!
-        let response = HTTPURLResponse(url: URL(string: "")!, statusCode: 200, httpVersion: nil, headerFields: nil)!
-        return .success(response, .content(image))
-    }
 }

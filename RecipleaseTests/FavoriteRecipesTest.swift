@@ -12,18 +12,18 @@ import XCTest
 class FavoriteRecipesTest: XCTestCase {
     let favoriteRecipes = FavoriteRecipes.shared
     let recipe = RecipeAdded(name: "recipe",
-    imageUrl: "imageUrl",
-    originalRecipeUrl: "recipeUrl",
-    ingredientsDetails: ["egg", "bread"],
-    numberOfLikes: 20,
-    preparationTime: 5)
+                             imageUrl: "imageUrl",
+                             originalRecipeUrl: "recipeUrl",
+                             ingredientsDetails: ["egg", "bread"],
+                             numberOfLikes: 20,
+                             preparationTime: 5)
 
     func testSaveFavoriteRecipeShouldSaveTheRecipeAndTheLatterShouldBeReturnedByGetFavoriteRecipesWhenCalled() {
 //        when
         favoriteRecipes.saveFavoriteRecipe(recipe: recipe)
 //        Then
         XCTAssertTrue(favoriteRecipes.getFavoriteRecipes().contains(recipe))
-        resetDataBaseForTest(recipeToDelete: recipe)
+        favoriteRecipes.deleteFavoriteRecipe(recipe: recipe)
     }
 
     func testGetFavoriteRecipesShouldReturnEmptyRecipeAddedArrayWhenFetchRequestFails() {
@@ -40,9 +40,5 @@ class FavoriteRecipesTest: XCTestCase {
         favoriteRecipes.deleteFavoriteRecipe(recipe: recipe)
 //        Then
         XCTAssertFalse(favoriteRecipes.getFavoriteRecipes().contains(recipe))
-    }
-
-    private func resetDataBaseForTest(recipeToDelete: RecipeAdded) {
-        favoriteRecipes.deleteFavoriteRecipe(recipe: recipeToDelete)
     }
 }
