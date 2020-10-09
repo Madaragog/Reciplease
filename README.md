@@ -1,3 +1,5 @@
+SCHOOL PROJECT
+
 # Reciplease
 
 This app permeates its user to find a recipe doable with the ingredients choosen.
